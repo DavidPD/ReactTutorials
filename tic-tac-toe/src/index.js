@@ -101,6 +101,9 @@ class Game extends React.Component {
 		let status;
 		if (winner) {
 			status = 'Winner: ' + winner;
+		} else if (current.squares.filter(square => square === null).length === 0) {
+			// if there's no winner and no squares are empty.
+			status = 'Draw!';
 		} else {
 			status = 'Next player: ' + this.getCurrentPlayer();
 		}
